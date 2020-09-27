@@ -17,17 +17,16 @@ export const LabelledNumberField = React.forwardRef<HTMLInputElement, LabelledNu
 
     return (
       <div {...outerProps}>
-        <label>
-          {label}
-          <input
-            {...otherInputProps}
-            type="number"
-            value={isNaN(value) ? "" : value}
-            disabled={isSubmitting}
-            {...props}
-            ref={ref}
-          />
-        </label>
+        <label>{label}</label>
+        <input
+          {...otherInputProps}
+          className="form-control"
+          type="number"
+          value={isNaN(value) ? "" : value}
+          disabled={isSubmitting}
+          {...props}
+          ref={ref}
+        />
 
         <ErrorMessage name={name}>
           {(msg) => (

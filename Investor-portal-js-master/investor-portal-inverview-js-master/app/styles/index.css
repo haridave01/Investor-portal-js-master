@@ -1,10 +1,11 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
-@import "./button.css";
+/* @import "./button.css"; */
+@import "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css";
 
-.hero {
+/* .hero {
   width: 100%;
   color: #333;
 }
@@ -20,4 +21,4 @@
 .title,
 .description {
   text-align: center;
-}
+} */

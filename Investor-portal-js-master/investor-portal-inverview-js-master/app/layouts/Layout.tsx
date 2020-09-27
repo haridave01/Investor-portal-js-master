@@ -15,7 +15,7 @@ const LoginButtons = () => {
     return (
       <div className="flex flex-grow justify-end">
         <button
-          className="btn-purple"
+          className="btn-primary btn"
           onClick={async () => {
             await logout()
           }}
@@ -43,30 +43,58 @@ const LoginButtons = () => {
 }
 
 const Header = (props) => (
-  <nav className="flex items-center justify-between flex-wrap p-6">
-    <div className="flex items-center flex-shrink-0 text-black mr-6">
-      <span className="font-semibold text-xl tracking-tight">Syndex</span>
-    </div>
-    <div className="block flex-grow flex tems-center">
-      <div className="text-sm flex-grow flex items-center">
-        <Link href="/issues">
-          <a className="inline-block hover:text-gray-dark mr-4">Issues</a>
-        </Link>
-
-        <Link href="/accounts">
-          <a className="inline-block hover:text-gray-dark mr-4">Accounts</a>
-        </Link>
-
-        <Link href="/applications">
-          <a className="inline-block hover:text-gray-dark mr-4">Applications</a>
-        </Link>
-
-        <Suspense fallback={<></>}>
-          <LoginButtons />
-        </Suspense>
+  <div className="'navbar navbar-inverse'">
+    <div className="container-fluid">
+      <div className="navbar-header">
+        <button
+          type="button"
+          className="collapsed navbar-toggle"
+          data-toggle="collapse"
+          data-target="#bs-example-navbar-collapse-6"
+          aria-expanded="false"
+        >
+          {" "}
+          <span className="sr-only">Toggle navigation</span>
+          <span className="icon-bar"></span>
+          <span className="icon-bar"></span>
+          <span className="icon-bar"></span>
+        </button>{" "}
+        <a href="#" className="navbar-brand">
+          Syndex
+        </a>
+      </div>
+      <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+        <ul className="nav navbar-nav">
+          <li className="active">
+            {" "}
+            <Link href="/issues">
+              <a>Issues</a>
+            </Link>
+          </li>{" "}
+          <li>
+            {" "}
+            <Link href="/accounts">
+              <a>Accounts</a>
+            </Link>
+          </li>{" "}
+          <li>
+            {" "}
+            <Link href="/applications">
+              <a className="inline-block hover:text-gray-dark mr-4">Applications</a>
+            </Link>
+          </li>{" "}
+        </ul>
+        <ul className="nav navbar-nav navbar-right">
+          <li>
+            {" "}
+            <Suspense fallback={<></>}>
+              <LoginButtons />
+            </Suspense>
+          </li>
+        </ul>{" "}
       </div>
     </div>
-  </nav>
+  </div>
 )
 
 const Layout = ({ title, children }: LayoutProps) => (

@@ -19,9 +19,9 @@ export const ApplicationsList = () => {
 
   return (
     <div>
-      <ul>
+      <ul className="list-group">
         {applications.map((application) => (
-          <li key={application.id}>
+          <li key={application.id} className="list-group-item">
             <Link href="/applications/[applicationId]" as={`/applications/${application.id}`}>
               <a>{application.name}</a>
             </Link>
@@ -29,10 +29,10 @@ export const ApplicationsList = () => {
         ))}
       </ul>
 
-      <button disabled={page === 0} onClick={goToPreviousPage}>
+      <button className="btn btn-default" disabled={page === 0} onClick={goToPreviousPage}>
         Previous
       </button>
-      <button disabled={!hasMore} onClick={goToNextPage}>
+      <button className="btn btn-default" disabled={!hasMore} onClick={goToNextPage}>
         Next
       </button>
     </div>
@@ -51,7 +51,7 @@ const ApplicationsPage: BlitzPage = () => {
 
         <p>
           <Link href="/applications/new">
-            <a>Create Application</a>
+            <a class="btn btn-primary">Create Application</a>
           </Link>
         </p>
 

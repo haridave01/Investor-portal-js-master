@@ -51,7 +51,7 @@ const IssuesPage: BlitzPage = () => {
 
         <div className="my-6">
           <Link href="/issues/new">
-            <a className="btn-purple">Create Issue</a>
+            <a className="btn btn-primary">Create Issue</a>
           </Link>
         </div>
 
